@@ -1,15 +1,40 @@
-class Program
+using System;
+
+namespace Treehouse.FitnessFrog
 {
-    static void Main()
+    class Program
     {
-        // Prompt the user for minutes exercised
-        System.Console.Write("Enter how many minutes you exercised: ");
+        static void Main()
+        {
+            int runningTotal = 0;
+            bool keepGoing = true;
 
-        string entry = System.Console.ReadLine();
+            while (keepGoing)
+            {
 
-        // add minutes exercised to total
-        // display total minutes exercised to the screen
-        //
+                // Prompt the user for minutes exercised
+                Console.Write("Enter how many minutes you exercised or type \"quit\" to exit: ");
 
+                string entry = Console.ReadLine();
+
+                if (entry == "quit"){
+                    keepGoing = false;
+                }
+                else
+                {
+                 int minutes = int.Parse(entry);
+            
+
+                // add minutes exercised to total
+                runningTotal = runningTotal + minutes;
+
+                // display total minutes exercised to the screen
+                Console.WriteLine("You've exercised " + runningTotal + " minutes");
+                
+                }//Repeat until the user quits
+
+            }
+            Console.WriteLine("Adios, Suckafish!");
+        }
     }
 }
